@@ -1,12 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Index :: Spring MVC</title>
-</head>
-<body>
-Index :: Spring MVC
-</body>
-</html>
+<%@ include file="/WEB-INF/views/include.jsp" %>
+
+<%-- Redirected because we can't set the welcome page to a virtual URL. --%>
+<c:redirect url="/hello.htm"/>
