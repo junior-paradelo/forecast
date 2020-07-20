@@ -10,12 +10,43 @@
 <script th:src="@{webjars/bootstrap/4.5.0/js/bootstrap.min.js}" type="text/javascript"></script>
 <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
 	crossorigin=""></script>
+<script type="text/javascript" th:src="@{/js/apexcharts.min.js}"></script>
 </head>
 <body>
 	<div id="mapid" style="height:700px; width:700px"></div>
 	<div>
 		<input type="button" class="btn btn-primary" id="btn1" onclick="showLocations()" value="Button1" /> <input type="button" class="btn btn-danger" id="btn2" value="Button2" />
 	</div>
+	<div id="chart"></div>
 </body>
 <script type="text/javascript" th:src="@{/js/map.js}"></script>
+<script type="text/javascript">
+var options = {
+		  chart: {
+		    height: 380,
+		    width: "50%",
+		    type: "line"
+		  },
+		  series: [
+		    {
+		      name: "Series 1",
+		      data: [45.5, 52, 38, 45, 19, 33]
+		    }
+		  ],
+		  xaxis: {
+		    categories: [
+		      "01 Jan",
+		      "02 Jan",
+		      "03 Jan",
+		      "04 Jan",
+		      "05 Jan",
+		      "06 Jan"
+		    ]
+		  }
+		};
+
+		var chart = new ApexCharts(document.querySelector("#chart"), options);
+
+		chart.render();
+</script>
 </html>
